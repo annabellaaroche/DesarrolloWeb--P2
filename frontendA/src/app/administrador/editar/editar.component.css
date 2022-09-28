@@ -1,0 +1,9 @@
+.container2{
+    max-width: 50%;
+    min-width: 25%;
+}
+
+.message{
+    max-width: 250px;
+    min-width: 150px;
+}

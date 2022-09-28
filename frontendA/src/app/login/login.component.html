@@ -1,0 +1,33 @@
+<body class="text-center">
+  <main class="form-signin w-100 m-auto container">
+      <img class="mb-4" src="https://static.vecteezy.com/system/resources/previews/009/300/661/original/3d-rendering-of-time-management-illustration-png.png" width=100% height=50%>
+    <form [formGroup]="form" (ngSubmit)="ingresar()">
+      <h1 class="h4 mb-3 fw-normal">Porfavor ingrese sus datos</h1>
+      <div class="form-group">
+        <label for="email">Correo:</label>
+        <input
+            formControlName="email"
+            id="email"
+            type="email"
+            class="form-control">
+        <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+            <div *ngIf="f['email'].errors && f['email'].errors['required']">El correo es obligatorio.</div>
+        </div>
+    </div>
+
+      <div class="form-group">
+            <label for="contrasena">Contraseña:</label>
+            <input
+                formControlName="contrasena"
+                id="contrasena"
+                type="password"
+                class="form-control">
+            <div *ngIf="f['contrasena'].touched && f['contrasena'].invalid" class="alert alert-danger">
+                <div *ngIf="f['contrasena'].errors && f['contrasena'].errors['required']">la contraseña es obligatorio.</div>
+            </div>
+        </div>
+   
+        <button class="btn btn-primary" type="submit" >Login</button>
+        </form>
+  </main>
+    </body>

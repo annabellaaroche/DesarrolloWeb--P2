@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<div class="container text-center">
+
+  <div class="row">
+    <div class="col-8"><div class="container " *ngIf="entrada; else clockout">
+      <img src="https://cdn-icons-png.flaticon.com/512/1063/1063143.png" width="25%">
+      <h1 class="display-1">No has marcado tu entrada aún!</h1>
+      <p><em>Presiona el boton de "Clock in" para marcar tu entrada.</em></p>
+      <button type="button" class="btn btn-dark" (click)="Marcaje()">Clock in!</button>
+    </div>
+    <ng-template #clockout>
+      <div class="container ">
+        <div class="container ">
+          <img src="https://cdn-icons-png.flaticon.com/512/1478/1478873.png" width="25%">
+          <p class="h1">Tu ultimo marcaje fue a las <mark>{{fecha}} {{hora}}</mark> con exito</p>
+        </div>
+          <p><em>Presiona el boton de "Clock it" para marcar nuevamente.</em></p>
+          <button type="button " class="btn btn-dark" (click)="Marcaje()">Clock it!</button>
+        </div>
+    </ng-template></div>
+    <div class="col">
+      <div class="container text-center bg-info bg-opacity-10 border border-info rounded">
+        <h1>Tiempo:</h1>
+        <div class="display-6">{{ rxTime | date: 'hh:mm:ss a' }}</div>
+      </div>
+        </div>
+</div>

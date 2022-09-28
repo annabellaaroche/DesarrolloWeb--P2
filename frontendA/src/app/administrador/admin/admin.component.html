@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+<div class="container text-start bg-info bg-opacity-10 border border-info rounded col-md-2 position-absolute top-0 end-0"> 
+<p>Tip:</p> 
+<p>Tipo de usuario: 1 (admin) </p>
+<p>Tipo de usuario: 0 (normal) </p>
+</div>
+
+<div class="container text-start">
+  <button type="button" class="btn btn-dark" routerLink="/admini/create/{{id_user}}/{{tipo_usuario}}">Crear Usuario</button>
+</div>
+<div class="container">
+<table class="table ">
+    <thead>
+      <tr >
+        <th scope="col">id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Email</th>
+        <th scope="col">Tipo Usuario</th>
+        <th scope="col">Opciones</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuario">
+        <td>{{usuario.id_usuario}}</td>
+        <td>{{usuario.nombre}}</td>
+        <td>{{usuario.email}}</td>
+        <td>{{usuario.tipo_usuario}}</td>
+        <td> <button type="button" class="btn btn-success" routerLink="/admini/view/{{id_user}}/{{tipo_usuario}}/{{usuario.id_usuario}}">Ver</button> </td>
+        <td>  <button type="button" class="btn btn-secondary" routerLink="/admini/editar/{{id_user}}/{{tipo_usuario}}/{{usuario.id_usuario}}">Editar</button></td>
+        <td>  <button type="button"  class="btn btn-danger" (click)="deleteUsuario(usuario.id_usuario)">Borrar</button> </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

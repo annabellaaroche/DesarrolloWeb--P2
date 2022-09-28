@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<div class="container  text-start bg-info bg-opacity-10 border border-info rounded col-md-2 position-absolute top-0 end-0"> 
+    <p>Tip:</p> 
+    <p>Tipo de usuario: 1 (admin) </p>
+    <p>Tipo de usuario: 0 (normal) </p>
+    </div>
+
+<div class="container  text-start">    
+    <a href="#" routerLink="/admini/admin/{{id_user}}/{{tipo_usuario}}" class="btn btn-dark">Regresar</a>
+</div>    
+<div class="container text-start div-1">
+    <h1>Usuario:</h1>
+<br>    
+<div >
+        <ul class="list-group rounded">
+       <li class="list-group-item"> <strong>Usuario ID:</strong>
+        <p>{{ usuario.id_usuario }}</p></li>
+        <li class="list-group-item">  <strong>Nombre:</strong>
+        <p>{{ usuario.nombre}}</p></li>
+        <li class="list-group-item">  <strong>Email:</strong>
+        <p>{{ usuario.email }}</p></li>
+        <li class="list-group-item">  <strong>Tipo de usuario:</strong>
+        <p>{{ usuario.tipo_usuario }}</p></li>
+    </ul>
+    </div>
+    
+</div>

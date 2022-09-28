@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1e896dc6;">
+    <div class="container-fluid">
+      <a class="navbar-brand" >Clock IN!</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/admini/marcaje/{{id_usuario}}/{{tipo_usuario}}"><img src="https://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/clock-icon.png" width="25px">Marcaje</a>
+          </li>
+          <li class="nav-item" *ngIf="admin_user">
+            <a class="nav-link" routerLink="/admini/admin/{{id_usuario}}/{{tipo_usuario}}"><img src="https://cdn-icons-png.flaticon.com/512/2206/2206248.png" width="25px"> Admin</a>
+          </li>
+        </ul>
+          <button class=" btn btn-primary " routerLink="/">Log out</button>
+      </div>
+    </div>
+  </nav>
+
+ 

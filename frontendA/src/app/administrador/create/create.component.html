@@ -1,0 +1,63 @@
+<app-navbar></app-navbar>
+<div class="container text-start bg-info bg-opacity-10 border border-info rounded col-md-2 position-absolute top-0 end-0"> 
+    <p>Tip:</p> 
+    <p>Tipo de usuario: 1 (admin) </p>
+    <p>Tipo de usuario: 0 (normal) </p>
+    </div>
+<div class="container">
+    <h1>Crear Usuario Nuevo</h1>
+
+    <a href="#" routerLink="/admini/admin/{{id_usuario}}/{{tipo_usuario}}" class="btn btn-dark">Regresar</a>
+         
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+   
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input
+                formControlName="nombre"
+                id="nombre"
+                type="text"
+                class="form-control">
+            <div *ngIf="f['nombre'].touched && f['nombre'].invalid" class="alert alert-danger">
+                <div *ngIf="f['nombre'].errors && f['nombre'].errors['required']">El nombre es obligatorio.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="contrasena">contrasena:</label>
+            <input
+                formControlName="contrasena"
+                id="contrasena"
+                type="password"
+                class="form-control">
+            <div *ngIf="f['contrasena'].touched && f['contrasena'].invalid" class="alert alert-danger">
+                <div *ngIf="f['contrasena'].errors && f['contrasena'].errors['required']">la contraseña es obligatorio.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input
+                formControlName="email"
+                id="email"
+                type="email"
+                class="form-control">
+            <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+                <div *ngIf="f['email'].errors && f['email'].errors['required']">El correo es obligatorio.</div>
+            </div>
+        </div>
+   
+        <div class="form-group">
+            <label for="tipo_usuario">Tip de Usuario:</label>
+            <input
+                formControlName="tipo_usuario"
+                id="tipo_usuario"
+                type="number"
+                class="form-control"/>            
+            <div *ngIf="f['tipo_usuario'].touched && f['tipo_usuario'].invalid" class="alert alert-danger">
+                <div *ngIf="f['tipo_usuario'].errors && f['tipo_usuario'].errors['required']">Tipo de Usuario es obligatorio.</div>
+            </div>
+        </div>
+   
+        <button class="btn btn-primary" type="submit" >Guardar</button>
+    </form>
+
+</div>
