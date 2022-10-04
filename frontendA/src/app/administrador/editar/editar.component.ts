@@ -27,12 +27,12 @@ export class EditarComponent implements OnInit {
     this.id_usuario = this.route.snapshot.params['id_usuario'];
     this.tipo_usuario = this.route.snapshot.params['tipo_usuario'];
     this.marcajeService.find(this.usuario_id).subscribe((data: Usuario)=>{
-      this.usuario = data;
+      this.usuario = data;      
     }); 
        
     this.form = new FormGroup({
       nombre: new FormControl('', [Validators.required]),
-      contrasena: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
       tipo_usuario: new FormControl('', Validators.required)
     });

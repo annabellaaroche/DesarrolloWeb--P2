@@ -3,13 +3,12 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario';
 import { MarcajeService } from 'src/app/services/marcaje.service';
-
 @Component({
-  selector: 'app-create',
-  templateUrl: './create.component.html',
-  styleUrls: ['./create.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class CreateComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
   form!: FormGroup;
   
@@ -28,7 +27,7 @@ export class CreateComponent implements OnInit {
       password: new FormControl('', Validators.required),
       password_confirmation: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
-      tipo_usuario: new FormControl('', Validators.required)
+      tipo_usuario: new FormControl('0', Validators.required)
     });
   }
 

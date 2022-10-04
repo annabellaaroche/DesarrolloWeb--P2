@@ -74,8 +74,8 @@ export class MarcajeComponent implements OnInit {
 //funcion marcar/recibe estado, devulve informacion de marcaje
   marcar(id_estado: number){
     this.setDate();
-    this.marcado.fk_idUsuario=this.id_usuario;
-    this.marcado.fk_idestado=id_estado;
+    this.marcado.usuario_id=this.id_usuario;
+    this.marcado.tipo_marcaje_id=id_estado;
     this.marcado.fecha=this.fecha;
     this.marcado.hora =this.hora;
     this.marcajeService.createMarcaje(this.marcado).subscribe((res:any) => {

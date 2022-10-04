@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
 
   ): void {
     this.form = new FormGroup({
-      contrasena: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required)
     });
   }
@@ -41,21 +41,21 @@ ingresar(){
   this.log=true;
   let user: Usuario = this.form.value;
   let email = user.email;
-  let contrasena = user.contrasena;
+  let password = user.password;
   this.marcajeService.findByEmail(email).subscribe((data: Usuario[]) => {
     this.usuario = data;  
     let user = this.usuario.pop();
   if(user!=null){
     let emailb = user.email;
-    let pass= user.contrasena;
-    let activo = user.activo;
-    this.id_usuario = user.id_usuario;
+    let pass= user.password;
+    let activo = user.estado;
+    this.id_usuario = user.usuario_id;
     this.tipo_usuario = user.tipo_usuario;
     let servicioUser = {tipo_usuario:this.tipo_usuario,user_id:this.id_usuario};
     this.servicioTipoUser.disparadorDeTipoUser.emit(
       {data:servicioUser}
     )
-   if(emailb.match(email) && pass.match(contrasena)&& activo >0){
+   if(emailb.match(email) && pass.match(password)&& activo >0){
     this.log =true;
     this.router.navigateByUrl('/admini/marcaje/'+ this.id_usuario+'/'+this.tipo_usuario);
   } else{

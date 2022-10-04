@@ -1,33 +1,51 @@
-<body class="text-center">
-  <main class="form-signin w-100 m-auto container">
-      <img class="mb-4" src="https://static.vecteezy.com/system/resources/previews/009/300/661/original/3d-rendering-of-time-management-illustration-png.png" width=100% height=50%>
-    <form [formGroup]="form" (ngSubmit)="ingresar()">
-      <h1 class="h4 mb-3 fw-normal">Porfavor ingrese sus datos</h1>
-      <div class="form-group">
-        <label for="email">Correo:</label>
-        <input
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://static.vecteezy.com/system/resources/previews/009/300/661/original/3d-rendering-of-time-management-illustration-png.png"
+          class="img-fluid" alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form [formGroup]="form" (ngSubmit)="ingresar()">
+          <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+            <p class="lead fw-normal mb-0 me-3">Sign in</p>
+          </div>
+
+          <!-- Email input -->
+          <div class="form-group form-outline mb-4">
+            <input
             formControlName="email"
             id="email"
             type="email"
-            class="form-control">
-        <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+            class="form-control form-control-lg" placeholder="Ingresar Correo">
+        <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger" >
             <div *ngIf="f['email'].errors && f['email'].errors['required']">El correo es obligatorio.</div>
         </div>
-    </div>
+            <label class="form-label" for="form3Example3">Correo</label>
+          </div>
 
-      <div class="form-group">
-            <label for="contrasena">Contraseña:</label>
+          <!-- Password input -->
+          <div class="form-group form-outline mb-4">
             <input
-                formControlName="contrasena"
-                id="contrasena"
-                type="password"
-                class="form-control">
-            <div *ngIf="f['contrasena'].touched && f['contrasena'].invalid" class="alert alert-danger">
-                <div *ngIf="f['contrasena'].errors && f['contrasena'].errors['required']">la contraseña es obligatorio.</div>
-            </div>
+            formControlName="password"
+            id="password"
+            type="password"
+            class="form-control form-control-lg" placeholder="Ingresar contraseña">
+        <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger" >
+            <div *ngIf="f['password'].errors && f['password'].errors['required']">La contraseña es obligatoria.</div>
         </div>
-   
-        <button class="btn btn-primary" type="submit" >Login</button>
+            <label class="form-label" for="form3Example3">Contraseña</label>
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="submit" class="btn btn-primary btn-lg"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+            <p class="small fw-bold mt-2 pt-1 mb-0">No tienes Cuenta? <a routerLink="/register"
+                class="link-danger">Registrarse</a></p>
+          </div>
+
         </form>
-  </main>
-    </body>
+      </div>
+    </div>
+  </div>
+</section>

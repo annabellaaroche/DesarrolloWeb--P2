@@ -23,13 +23,13 @@
     </thead>
     <tbody>
       <tr *ngFor="let usuario of usuario">
-        <td>{{usuario.id_usuario}}</td>
+        <td>{{usuario.usuario_id}}</td>
         <td>{{usuario.nombre}}</td>
         <td>{{usuario.email}}</td>
         <td>{{usuario.tipo_usuario}}</td>
-        <td> <button type="button" class="btn btn-success" routerLink="/admini/view/{{id_user}}/{{tipo_usuario}}/{{usuario.id_usuario}}">Ver</button> </td>
-        <td>  <button type="button" class="btn btn-secondary" routerLink="/admini/editar/{{id_user}}/{{tipo_usuario}}/{{usuario.id_usuario}}">Editar</button></td>
-        <td>  <button type="button"  class="btn btn-danger" (click)="deleteUsuario(usuario.id_usuario)">Borrar</button> </td>
+        <td> <button type="button" class="btn btn-success" routerLink="/admini/view/{{id_user}}/{{tipo_usuario}}/{{usuario.usuario_id}}">Ver</button> </td>
+        <td>  <button type="button" class="btn btn-secondary" routerLink="/admini/editar/{{id_user}}/{{tipo_usuario}}/{{usuario.usuario_id}}">Editar</button></td>
+        <td>  <button type="button"  class="btn btn-danger" (click)="deleteUsuario(usuario.usuario_id)">Borrar</button> </td>
       </tr>
     </tbody>
   </table>

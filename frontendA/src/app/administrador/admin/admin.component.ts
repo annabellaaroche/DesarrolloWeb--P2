@@ -29,7 +29,7 @@ export class AdminComponent implements OnInit {
   }
   deleteUsuario(id:number){
     this.marcajeService.delete(id).subscribe(res => {
-         this.usuario = this.usuario.filter(item => item.id_usuario !== id);
+         this.usuario = this.usuario.filter(item => item.usuario_id !== id);
          console.log('usuario deleted successfully!');
     })
   }

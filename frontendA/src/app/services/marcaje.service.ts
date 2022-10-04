@@ -20,14 +20,14 @@ export class MarcajeService {
   constructor(private httpClient: HttpClient) { }
     
   getAll(): Observable<Usuario[]> {
-    return this.httpClient.get<Usuario[]>(this.apiURL + '/usuario')
+    return this.httpClient.get<Usuario[]>(this.apiURL + '/usuarios')
     .pipe(
       catchError(this.errorHandler)
     )
   }
     
   create(usuario: Usuario): Observable<Usuario> {
-    return this.httpClient.post<Usuario>(this.apiURL + '/usuario', JSON.stringify(usuario), this.httpOptions)
+    return this.httpClient.post<Usuario>(this.apiURL + '/register', JSON.stringify(usuario), this.httpOptions)
     .pipe(
       catchError(this.errorHandler)
     )

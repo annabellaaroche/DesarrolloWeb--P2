@@ -1,8 +1,9 @@
 export class Usuario {
-public id_usuario:number=0;
+public usuario_id:number=0;
 public nombre: string ='';
-public contrasena: string='';
+public password: string='';
+public password_confirmation: string='';
 public email: string='';
 public tipo_usuario: number=0;
-public activo =0;
+public estado =0;
 }
