@@ -3,9 +3,13 @@
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-md-9 col-lg-6 col-xl-5">
           <img src="https://cdn-icons-png.flaticon.com/512/753/753210.png"
-            class="img-fluid" alt="Sample image">
+            class="img-fluid" alt="registro">
+            
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+            <h1 class="lead fw-normal mb-0 me-3">Registrarse</h1>
+          </div>
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
             <!-- Nombre input -->
             <div class="form-outline mb-4">
@@ -41,7 +45,7 @@
                 type="password"
                 class="form-control form-control-lg">
             <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
-                <div *ngIf="f['password'].errors && f['password'].errors['required']">la contraseña es obligatorio.</div>
+                <div *ngIf="f['password'].errors && f['password'].errors['required']">la contraseña es obligatoria.</div>
             </div>
               <label class="form-label" for="form3Example3">Contraseña</label>
             </div>

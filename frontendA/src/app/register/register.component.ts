@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ErrorHandler, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario';
@@ -37,14 +37,16 @@ export class RegisterComponent implements OnInit {
 
   onSubmit(){
     if (!this.form.valid) {
-      return ;
+      alert(
+        'Datos Invalidos, porfavor revise la informacion'
+      )
     }
     let usuario: Usuario = this.form.value;
     this.marcajeService.create(usuario).subscribe((res:any) => {
       alert(
-        'Exito success'
+        'Usuario Registrado Correctamente'
       )
-         this.router.navigateByUrl('admini/admin/'+this.id_usuario+'/'+this.tipo_usuario);
-    })
+         this.router.navigateByUrl('/');
+      })
   }
 }
