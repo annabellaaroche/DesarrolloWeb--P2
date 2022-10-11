@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario';
 import { MarcajeService } from 'src/app/services/marcaje.service';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-admin',
@@ -15,13 +16,14 @@ export class AdminComponent implements OnInit {
   constructor(
     public marcajeService: MarcajeService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private tokenService: TokenStorageService
 
     ) { }
     
   ngOnInit(): void {
-    this.id_user = this.route.snapshot.params['id_usuario'];
-    this.tipo_usuario = this.route.snapshot.params['tipo_usuario'];
+    this.id_user = this.tokenService.getID();
+    this.tipo_usuario = this.tokenService.getRol();
     this.marcajeService.getAll().subscribe((data: Usuario[])=>{
       this.usuario = data;
       

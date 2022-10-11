@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
     if (this.storageService.isLoggedIn()) {
       this.isLoggedIn = true;
       this.usuario = this.storageService.getUser();
-      window.location.replace('/admini/marcaje/'+ this.id_usuario+'/'+this.tipo_usuario)
+      window.location.replace('/admini/marcaje');
     }
     this.form = new FormGroup({
       password: new FormControl('', Validators.required),
@@ -61,7 +61,7 @@ ingresar(){
         this.storageService.saveID(this.id_usuario.toString());
         this.tipo_usuario = user1[0].tipo_usuario;
         this.storageService.saveRol(this.tipo_usuario.toString());
-        this.router.navigateByUrl('/admini/marcaje/'+ this.id_usuario+'/'+this.tipo_usuario);
+        this.router.navigateByUrl('/admini/marcaje');
       },
       error: err => {
         this.errorMessage = err.error.message;

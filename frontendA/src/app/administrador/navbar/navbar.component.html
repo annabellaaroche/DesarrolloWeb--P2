@@ -7,10 +7,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" routerLink="/admini/marcaje/{{id_usuario}}/{{tipo_usuario}}"><img src="https://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/clock-icon.png" width="25px">Marcaje</a>
+            <a class="nav-link active" routerLink="/admini/marcaje"><img src="https://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/clock-icon.png" width="25px">Marcaje</a>
           </li>
           <li class="nav-item" *ngIf="admin_user">
-            <a class="nav-link" routerLink="/admini/admin/{{id_usuario}}/{{tipo_usuario}}"><img src="https://cdn-icons-png.flaticon.com/512/2206/2206248.png" width="25px"> Admin</a>
+            <a class="nav-link" routerLink="/admini/admin"><img src="https://cdn-icons-png.flaticon.com/512/2206/2206248.png" width="25px"> Admin</a>
           </li>
         </ul>
           <button class=" btn btn-primary " (click)="logout()">Log out</button>

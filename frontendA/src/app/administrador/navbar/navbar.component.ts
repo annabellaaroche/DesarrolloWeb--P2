@@ -20,8 +20,8 @@ export class NavbarComponent implements OnInit {
   id_usuario =0;
   tipo_usuario =0;
   ngOnInit(): void {
-    this.id_usuario = this.route.snapshot.params['id_usuario'];
-    this.tipo_usuario = this.route.snapshot.params['tipo_usuario'];
+    this.id_usuario = this.tokenStorageService.getID();
+    this.tipo_usuario = this.tokenStorageService.getRol();
     if(this.tipo_usuario>0){
       this.admin_user = true;
     }else{

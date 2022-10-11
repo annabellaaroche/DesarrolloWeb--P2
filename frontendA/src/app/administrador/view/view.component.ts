@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario';
 import { MarcajeService } from 'src/app/services/marcaje.service';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-view',
@@ -17,13 +18,14 @@ export class ViewComponent implements OnInit {
   constructor(
     private marcajeService: MarcajeService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private tokenService: TokenStorageService,
   ) { }
 
   ngOnInit(): void {  
     this.id_usuario = this.route.snapshot.params['id'];
-    this.id_user = this.route.snapshot.params['id_usuario'];
-    this.tipo_usuario = this.route.snapshot.params['tipo_usuario'];
+    this.id_user = this.tokenService.getID();
+    this.tipo_usuario = this.tokenService.getRol();
     this.marcajeService.find(this.id_usuario).subscribe((data: Usuario)=>{
       this.usuario = data;
     });

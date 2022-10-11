@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { map, share, Subscription, timer } from 'rxjs';
 import { Marcado } from 'src/app/models/marcado';
 import { MarcajeService } from 'src/app/services/marcaje.service';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-marcaje',
@@ -29,11 +30,13 @@ export class MarcajeComponent implements OnInit {
   constructor(
     private marcajeService: MarcajeService,
     private route: ActivatedRoute,
+    private tokenService: TokenStorageService
   ) {
   }
 
   ngOnInit(): void {
-    this.id_usuario = this.route.snapshot.params['id_usuario'];
+    this.id_usuario = this.tokenService.getID();
+    
     this.setDate();
     this.marcajeService.getMarcajeByUser(this.id_usuario,this.fecha).subscribe((data:Marcado[])=>{
     this.lastMarcaje = data;

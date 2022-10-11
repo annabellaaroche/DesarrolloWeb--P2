@@ -8,7 +8,7 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 })
 export class AdminiComponent implements OnInit {
 
-  constructor(public storageService: TokenStorageService) { }
+  constructor() { }
 
   ngOnInit(): void {
 }

@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MarcajeComponent } from './marcaje/marcaje.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 
 
 
@@ -21,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
-  ]
+  ],
+  providers: [ JwtHelperService,{provide: JWT_OPTIONS, useValue:JWT_OPTIONS} ]
 })
 export class AdministradorModule { }

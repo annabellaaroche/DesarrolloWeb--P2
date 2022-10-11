@@ -9,7 +9,7 @@
 <div class="container container2">
     <h1>Actualizar Usuario</h1>
     
-    <a href="#" routerLink="/admini/admin/{{id_usuario}}/{{tipo_usuario}}" class="btn btn-dark">Regresar</a>
+    <a href="#" routerLink="/admini/admin" class="btn btn-dark">Regresar</a>
            
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
    
@@ -26,18 +26,7 @@
             </div>
         </div>
    
-        <div class="form-group">
-            <label for="password">contraseña</label>
-            <input
-                formControlName="password"
-                id="password"
-                type="password"
-                [(ngModel)]="usuario.password"
-                class="form-control">
-            <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
-                <div *ngIf="f['password'].errors && f['password'].errors['required']">La contraseña es obligatoria.</div>
-            </div>
-        </div>
+    
         <div class="form-group">
             <label for="email">Email:</label>
             <input

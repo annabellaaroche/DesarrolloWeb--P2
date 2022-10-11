@@ -8,12 +8,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
 import { httpInterceptorProviders } from './_helpers/auth.interceptor';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { Pagina404Component } from './pagina404/pagina404.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    Pagina404Component
   ],
   imports: [
     BrowserModule,
@@ -21,9 +24,9 @@ import { httpInterceptorProviders } from './_helpers/auth.interceptor';
     AdministradorModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [httpInterceptorProviders],
+  providers: [httpInterceptorProviders, JwtHelperService,{provide: JWT_OPTIONS, useValue:JWT_OPTIONS} ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { }  
