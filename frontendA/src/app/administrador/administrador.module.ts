@@ -11,11 +11,12 @@ import { MarcajeComponent } from './marcaje/marcaje.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { ReportesComponent } from './reportes/reportes.component';
 
 
 
 @NgModule({
-  declarations: [AdminComponent,EditarComponent, AdminiComponent, ViewComponent, CreateComponent,NavbarComponent,MarcajeComponent],
+  declarations: [AdminComponent,EditarComponent, AdminiComponent, ViewComponent, CreateComponent,NavbarComponent,MarcajeComponent, ReportesComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

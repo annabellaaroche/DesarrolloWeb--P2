@@ -9,6 +9,7 @@ import { CreateComponent } from './create/create.component';
 import { MarcajeComponent } from './marcaje/marcaje.component';
 import { GuardGuard } from '../guards/guard.guard';
 import { Pagina404Component } from '../pagina404/pagina404.component';
+import { ReportesComponent } from './reportes/reportes.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,7 @@ const routes: Routes = [
     }
        ]
   }, 
+  {path: 'reportes', component: ReportesComponent},
   {path: 'pagina404', component: Pagina404Component},
   { path: '**', redirectTo: 'pagina404'}
 ];

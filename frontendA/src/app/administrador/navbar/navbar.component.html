@@ -10,7 +10,10 @@
             <a class="nav-link active" routerLink="/admini/marcaje"><img src="https://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/clock-icon.png" width="25px">Marcaje</a>
           </li>
           <li class="nav-item" *ngIf="admin_user">
-            <a class="nav-link" routerLink="/admini/admin"><img src="https://cdn-icons-png.flaticon.com/512/2206/2206248.png" width="25px"> Admin</a>
+            <a class="nav-link" routerLink="/admini/admin"><img src="https://cdn-icons-png.flaticon.com/512/2206/2206248.png" width="25px">Usuarios</a>
+          </li>
+          <li class="nav-item" *ngIf="reporter_user">
+            <a class="nav-link" routerLink="/reportes"><img src="https://cdn-icons-png.flaticon.com/512/3094/3094836.png" width="25px"> Reportes</a>
           </li>
         </ul>
           <button class=" btn btn-primary " (click)="logout()">Log out</button>

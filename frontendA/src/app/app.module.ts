@@ -16,8 +16,7 @@ import { Pagina404Component } from './pagina404/pagina404.component';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    Pagina404Component
-  ],
+    Pagina404Component  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

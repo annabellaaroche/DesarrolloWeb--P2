@@ -17,15 +17,17 @@ export class NavbarComponent implements OnInit {
     private tokenStorageService: TokenStorageService,
     ) { }
   admin_user =false;
+  reporter_user=false;
   id_usuario =0;
   tipo_usuario =0;
   ngOnInit(): void {
     this.id_usuario = this.tokenStorageService.getID();
     this.tipo_usuario = this.tokenStorageService.getRol();
-    if(this.tipo_usuario>0){
+    if(this.tipo_usuario==1){
       this.admin_user = true;
-    }else{
+    }else if(this.tipo_usuario==2){
       this.admin_user = false;
+      this.reporter_user = true;
     }
     this.servicioTipoUser.disparadorDeTipoUser.subscribe(data =>{
       //this.user = data;
