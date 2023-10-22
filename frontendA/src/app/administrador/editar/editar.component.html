@@ -41,18 +41,7 @@
             </div>
         </div>
    
-        <div class="form-group">
-            <label for="tipo_usuario">tipo_usuario:</label>
-            <input
-                formControlName="tipo_usuario"
-                id="tipo_usuario"
-                type="number"
-                [(ngModel)]="usuario.tipo_usuario"
-                class="form-control">            
-            <div *ngIf="f['tipo_usuario'].touched && f['tipo_usuario'].invalid" class="alert alert-danger">
-                <div *ngIf="f['tipo_usuario'].errors && f['tipo_usuario'].errors['required']">Tipo de usuario es obligatorio.</div>
-            </div>
-        </div>
+
    
         <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Guardar</button>
     </form>

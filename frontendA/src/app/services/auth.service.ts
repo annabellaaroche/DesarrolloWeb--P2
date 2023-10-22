@@ -3,47 +3,51 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {  Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Usuario } from '../models/usuario';
-import { User } from '../models/TipoUser';
-import { AuthUser } from '../models/auth.model';
+import {
+  AngularFireDatabase,
+  AngularFireList,
+  AngularFireObject,
+} from '@angular/fire/compat/database';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private apiURL = "http://127.0.0.1:8000/api";
-
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-    })
+  UsuariosRef!: AngularFireList<any>;
+  UsuarioRef!: AngularFireObject<any>;
+  constructor(private db: AngularFireDatabase) {}
+  // Create Usuario
+  AddUsuario(usuario: Usuario) {
+    this.UsuariosRef.push({
+      $key:usuario.$key,
+      nombre: usuario.nombre,
+      email: usuario.email,
+      password: usuario.password,
+    });
   }
-
-  constructor(private httpClient: HttpClient) { }
-
-
-  register(user: Usuario): Observable<Usuario> {
-    return this.httpClient.post<Usuario>(this.apiURL + '/register', JSON.stringify(user), this.httpOptions)
-    .pipe(
-      catchError(this.errorHandler)
-    )
-  }  
-
-  login(user: AuthUser): Observable<AuthUser> {
-    return this.httpClient.post<AuthUser>(this.apiURL + '/login', JSON.stringify(user), this.httpOptions)
-    .pipe(
-      catchError(this.errorHandler)
-    )
-  }  
-
-
-  errorHandler(error: any) {
-    let errorMessage = '';
-    if(error.error instanceof ErrorEvent) {
-      errorMessage = error.error.message;
-    } else {
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    return throwError(errorMessage);
- }
+  // Fetch Single Usuario Object
+  GetUsuario(id: string) {
+    this.UsuarioRef = this.db.object('usuarios/' + id);
+    return this.UsuarioRef;
+  }
+  // Fetch Usuarios List
+  GetUsuariosList() {
+    this.UsuariosRef = this.db.list('usuarios');
+    return this.UsuariosRef;
+  }
+  // Update Usuario Object
+  UpdateUsuario(usuario: Usuario) {
+    this.UsuarioRef.update({
+      $key:usuario.$key,
+      nombre: usuario.nombre,
+      email: usuario.email,
+      password: usuario.password,
+    });
+  }
+  // Delete Usuario Object
+  DeleteUsuario(id: string) {
+    this.UsuarioRef = this.db.object('usuarios/' + id);
+    this.UsuarioRef.remove();
+  }
 }

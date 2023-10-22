@@ -19,27 +19,27 @@ const routes: Routes = [
           {
               path: 'editar/:id',
               component: EditarComponent,
-              canActivate: [GuardGuard]
+             /* canActivate: [GuardGuard]*/
           },
           {
             path: 'admin',
             component: AdminComponent,
-            canActivate: [GuardGuard]
+          /*  canActivate: [GuardGuard]*/
         },
         {
           path: 'view/:id',
           component: ViewComponent,
-          canActivate: [GuardGuard]
+          /*canActivate: [GuardGuard]*/
       },
       {
         path: 'create',
         component: CreateComponent,
-        canActivate: [GuardGuard]
+       /* canActivate: [GuardGuard]*/
     },
     {
       path: 'marcaje',
       component: MarcajeComponent,
-      canActivate: [GuardGuard]
+     /* canActivate: [GuardGuard]*/
     }
        ]
   }, 

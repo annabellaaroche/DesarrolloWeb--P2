@@ -2,5 +2,5 @@ import { Usuario } from "./usuario";
 
 export class AuthUser {
     public token = '';
-    public user = new Usuario;
+    //public user = new Usuario;
     }

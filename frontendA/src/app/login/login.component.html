@@ -2,8 +2,8 @@
   <div class="container-fluid h-custom">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-md-9 col-lg-6 col-xl-5">
-        <img src="https://static.vecteezy.com/system/resources/previews/009/300/661/original/3d-rendering-of-time-management-illustration-png.png"
-          class="img-fluid" alt="Sample image">
+        <img src="https://media.licdn.com/dms/image/D4E12AQEW1U7Es4k5OA/article-cover_image-shrink_720_1280/0/1690997267007?e=2147483647&v=beta&t=59qfMTncUmIZtdmpzx3GgMT6x-BMZN1WJyv7jFi-nHk"
+           alt="Sample image">
       </div>
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
         <form [formGroup]="form" (ngSubmit)="ingresar()">
@@ -13,6 +13,8 @@
 
           <!-- Email input -->
           <div class="form-group form-outline mb-4">
+            <label class="form-label" for="form3Example3">Correo</label>
+
             <input
             formControlName="email"
             id="email"
@@ -21,11 +23,12 @@
         <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger" >
             <div *ngIf="f['email'].errors && f['email'].errors['required']">El correo es obligatorio.</div>
         </div>
-            <label class="form-label" for="form3Example3">Correo</label>
           </div>
 
           <!-- Password input -->
           <div class="form-group form-outline mb-4">
+            <label class="form-label" for="form3Example3">Contraseña</label>
+
             <input
             formControlName="password"
             id="password"
@@ -34,7 +37,6 @@
         <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger" >
             <div *ngIf="f['password'].errors && f['password'].errors['required']">La contraseña es obligatoria.</div>
         </div>
-            <label class="form-label" for="form3Example3">Contraseña</label>
           </div>
 
           <div class="text-center text-lg-start mt-4 pt-2">

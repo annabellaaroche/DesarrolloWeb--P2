@@ -9,7 +9,7 @@ import { RegisterComponent } from './register/register.component';
 const routes: Routes = [
   { path: '', component: LoginComponent },
   {path: 'register', component: RegisterComponent},
-  {path: 'admini', component: AdminiComponent, canActivate: [GuardGuard]}
+  {path: 'admini', component: AdminiComponent/*, canActivate: [GuardGuard]*/}
 ];
 
 @NgModule({

@@ -1,10 +1,4 @@
 <app-navbar></app-navbar>
-<div class="container text-start bg-info bg-opacity-10 border border-info rounded col-md-2 position-absolute top-0 end-0"> 
-<p>Tip:</p> 
-<p>Tipo de usuario: 1 (admin) </p>
-<p>Tipo de usuario: 2 (reporter) </p>
-<p>Tipo de usuario: 0 (normal) </p>
-</div>
 
 <div class="container text-start">
   <button type="button" class="btn btn-dark" routerLink="/admini/create">Crear Usuario</button>
@@ -14,9 +8,10 @@
     <thead>
       <tr >
         <th scope="col">id</th>
+        <th scope="col">Card ID</th>
         <th scope="col">Nombre</th>
-        <th scope="col">Email</th>
-        <th scope="col">Tipo Usuario</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Fecha Contratacion</th>
         <th scope="col">Opciones</th>
         <th></th>
         <th></th>
@@ -24,13 +19,14 @@
     </thead>
     <tbody>
       <tr *ngFor="let usuario of usuario">
-        <td>{{usuario.usuario_id}}</td>
-        <td>{{usuario.nombre}}</td>
-        <td>{{usuario.email}}</td>
-        <td>{{usuario.tipo_usuario}}</td>
-        <td> <button type="button" class="btn btn-success" routerLink="/admini/view/{{usuario.usuario_id}}">Ver</button> </td>
-        <td>  <button type="button" class="btn btn-secondary" routerLink="/admini/editar/{{usuario.usuario_id}}">Editar</button></td>
-        <td>  <button type="button"  class="btn btn-danger" (click)="deleteUsuario(usuario.usuario_id)">Borrar</button> </td>
+        <td>{{usuario.IdUsuario}}</td>
+        <td>{{usuario.CardUID}}</td>
+        <td>{{usuario.Nombre}}</td>
+        <td>{{usuario.Apellido}}</td>
+        <td>{{usuario.FechaContratacion}}</td>
+        <td> <button type="button" class="btn btn-success" routerLink="/admini/view/{{usuario.$key}}">Ver</button> </td>
+        <td>  <button type="button" class="btn btn-secondary" routerLink="/admini/editar/{{usuario.$key}}">Editar</button></td>
+        <td>  <button type="button"  class="btn btn-danger" (click)="deleteUsuario(usuario.$key)">Borrar</button> </td>
       </tr>
     </tbody>
   </table>

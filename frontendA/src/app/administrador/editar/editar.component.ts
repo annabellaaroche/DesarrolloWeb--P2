@@ -13,7 +13,7 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 export class EditarComponent implements OnInit {
 
   usuario_id!: number;
-  usuario: Usuario = new Usuario();
+  usuario!:Usuario;
   form!: FormGroup;
 
   constructor(

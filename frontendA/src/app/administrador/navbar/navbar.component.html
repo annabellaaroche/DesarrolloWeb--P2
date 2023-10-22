@@ -1,18 +1,18 @@
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1e896dc6;">
     <div class="container-fluid">
-      <a class="navbar-brand" >Clock IN!</a>
+      <a class="navbar-brand" >Accesos!</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
+          <li class="nav-item" *ngif="false">
             <a class="nav-link active" routerLink="/admini/marcaje"><img src="https://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/clock-icon.png" width="25px">Marcaje</a>
           </li>
-          <li class="nav-item" *ngIf="admin_user">
+          <li class="nav-item" >
             <a class="nav-link" routerLink="/admini/admin"><img src="https://cdn-icons-png.flaticon.com/512/2206/2206248.png" width="25px">Usuarios</a>
           </li>
-          <li class="nav-item" *ngIf="reporter_user">
+          <li class="nav-item" >
             <a class="nav-link" routerLink="/reportes"><img src="https://cdn-icons-png.flaticon.com/512/3094/3094836.png" width="25px"> Reportes</a>
           </li>
         </ul>

@@ -15,7 +15,7 @@ import { TokenStorageService } from '../services/token-storage.service';
 export class LoginComponent implements OnInit {
   form!: FormGroup;
   id_usuario=0;
-  tipo_usuario=0;
+  tipo_usuario=1;
   isLoggedIn = false;
   isLoginFailed = false;
   errorMessage = '';
@@ -43,11 +43,13 @@ export class LoginComponent implements OnInit {
     return this.form.controls;
   }
 ingresar(){
-  if (!this.form.valid) {
+ /* if (!this.form.valid) {
     return ;
-  }
+  }*/
+  this.router.navigateByUrl('/admini/admin');
+
   let user: AuthUser = this.form.value;
-    this.authService.login(user).subscribe({
+  /*  this.authService.login(user).subscribe({
       next: data => {
         this.storageService.saveUser(data);
         this.usuario = this.storageService.getUser();
@@ -67,6 +69,6 @@ ingresar(){
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
       }
-    });
+    });*/
   }
 }

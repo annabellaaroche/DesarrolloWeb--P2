@@ -12,7 +12,7 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 export class ViewComponent implements OnInit {
 
   id_usuario!: number;
-  usuario: Usuario = new Usuario();
+  usuario!: Usuario;
   id_user =0;
   tipo_usuario =0;
   constructor(
