@@ -1,5 +1,5 @@
 export interface Usuario {
- Nombre: string;
- Apellido: string;
- CardUID: string;
+ nombre: string;
+ apellido: string;
+ cardUID: string;
 }

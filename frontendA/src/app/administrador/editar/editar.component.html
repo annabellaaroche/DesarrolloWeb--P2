@@ -8,37 +8,37 @@
 </div> 
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="form-group">
-            <label for="CardUID">Card ID:</label>
+            <label for="cardUID">card ID:</label>
             <input 
-                formControlName="CardUID"
-                id="CardUID"
+                formControlName="cardUID"
+                id="cardUID"
                 type="text"
                 class="form-control"
                 [readonly]="true"
             >
         </div>
         <div class="form-group">
-            <label for="Nombre">Nombre:</label>
+            <label for="nombre">Nombre:</label>
             <input
-                formControlName="Nombre"
-                id="Nombre"
+                formControlName="nombre"
+                id="nombre"
                 type="text"
                 class="form-control">
-            <div *ngIf="f['Nombre'].touched && f['Nombre'].invalid" class="alert alert-danger">
-                <div *ngIf="f['Nombre'].errors && f['Nombre'].errors['required']">El Nombre es obligatorio.</div>
+            <div *ngIf="f['nombre'].touched && f['nombre'].invalid" class="alert alert-danger">
+                <div *ngIf="f['nombre'].errors && f['nombre'].errors['required']">El Nombre es obligatorio.</div>
             </div>
         </div>
    
     
         <div class="form-group">
-            <label for="Apellido">Apellido:</label>
+            <label for="apellido">Apellido:</label>
             <input
-                formControlName="Apellido"
-                id="Apellido"
+                formControlName="apellido"
+                id="apellido"
                 type="text"
                 class="form-control">
-            <div *ngIf="f['Apellido'].touched && f['Apellido'].invalid" class="alert alert-danger">
-                <div *ngIf="f['Apellido'].errors && f['Apellido'].errors['required']">El Apellido es obligatorio.</div>
+            <div *ngIf="f['apellido'].touched && f['apellido'].invalid" class="alert alert-danger">
+                <div *ngIf="f['apellido'].errors && f['apellido'].errors['required']">El Apellido es obligatorio.</div>
             </div>
         </div>
         <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Guardar</button>

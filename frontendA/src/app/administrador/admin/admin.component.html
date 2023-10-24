@@ -14,11 +14,11 @@
     </thead>
     <tbody>
       <tr *ngFor="let usuario of newUsuario">
-        <td>{{usuario.CardUID}}</td>
-        <td>{{usuario.Nombre}}</td>
-        <td>{{usuario.Apellido}}</td>
-        <td>  <button type="button" class="btn btn-secondary" routerLink="/admini/editar/{{usuario.CardUID}}">Editar</button></td>
-        <td>  <button type="button"  class="btn btn-danger" (click)="deleteUsuario(usuario.CardUID)">Borrar</button> </td>
+        <td>{{usuario.cardUID}}</td>
+        <td>{{usuario.nombre}}</td>
+        <td>{{usuario.apellido}}</td>
+        <td>  <button type="button" class="btn btn-secondary" routerLink="/admini/editar/{{usuario.cardUID}}">Editar</button></td>
+        <td>  <button type="button"  class="btn btn-danger" (click)="deleteUsuario(usuario.cardUID)">Borrar</button> </td>
       </tr>
     </tbody>
   </table>
@@ -38,11 +38,11 @@
     </thead>
     <tbody>
       <tr *ngFor="let usuario of usuario">
-        <td>{{usuario.CardUID}}</td>
-        <td>{{usuario.Nombre}}</td>
-        <td>{{usuario.Apellido}}</td>
-        <td>  <button type="button" class="btn btn-secondary" routerLink="/admini/editar/{{usuario.CardUID}}">Editar</button></td>
-        <td>  <button type="button"  class="btn btn-danger" (click)="deleteUsuario(usuario.CardUID)">Borrar</button> </td>
+        <td>{{usuario.cardUID}}</td>
+        <td>{{usuario.nombre}}</td>
+        <td>{{usuario.apellido}}</td>
+        <td>  <button type="button" class="btn btn-secondary" routerLink="/admini/editar/{{usuario.cardUID}}">Editar</button></td>
+        <td>  <button type="button"  class="btn btn-danger" (click)="deleteUsuario(usuario.cardUID)">Borrar</button> </td>
       </tr>
     </tbody>
   </table>

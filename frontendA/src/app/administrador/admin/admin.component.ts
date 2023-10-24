@@ -32,7 +32,7 @@ export class AdminComponent implements OnInit {
       this.newUsuario=[];
       data.forEach(item=> {
         let a = item.payload.toJSON() as Usuario; 
-        if(a.Apellido.length!=0){
+        if(a.apellido.length!=0){
         this.usuario.push(a);
         }else{
           this.ctr++;
