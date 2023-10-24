@@ -1,6 +1,5 @@
 export interface Usuario {
- $key:number;
- nombre: string;
- password: string;
- email: string;
+ Nombre: string;
+ Apellido: string;
+ CardUID: string;
 }

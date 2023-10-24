@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { elementAt, empty } from 'rxjs';
 import { Usuario } from 'src/app/models/usuario';
 import { AuthService } from 'src/app/services/auth.service';
 import { MarcajeService } from 'src/app/services/marcaje.service';
@@ -13,7 +14,8 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 })
 export class AdminComponent implements OnInit {
   usuario!: any[];
-  id_user =0;
+  newUsuario!:any[];
+  ctr =0;
   tipo_usuario =0;
   noData: boolean = false;
   constructor(
@@ -27,10 +29,15 @@ export class AdminComponent implements OnInit {
     let s = this.crudApi.GetUsuariosList();
     s.snapshotChanges().subscribe(data => {
       this.usuario = [];
-      data.forEach(item => {
-        let a = item.payload.toJSON(); 
-        this.usuario.push(a as Usuario);
-        console.log(this.usuario);
+      this.newUsuario=[];
+      data.forEach(item=> {
+        let a = item.payload.toJSON() as Usuario; 
+        if(a.Apellido.length!=0){
+        this.usuario.push(a);
+        }else{
+          this.ctr++;
+          this.newUsuario.push(a);
+        }
       })
     })
     }
@@ -44,10 +51,8 @@ export class AdminComponent implements OnInit {
       }
     })
   }
-  deleteUsuario(id:number){
-    this.marcajeService.delete(id).subscribe(res => {
-         this.usuario = this.usuario.filter(item => item.$key !== id);
+  deleteUsuario(id:string){
+    this.crudApi.DeleteUsuario(id);
          console.log('usuario deleted successfully!');
-    })
   }
 }

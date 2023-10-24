@@ -1,48 +1,46 @@
 <app-navbar></app-navbar>
 <head><meta charset="utf-8">
 </head>
-<div class="container message text-start bg-info bg-opacity-10 border border-info rounded col-md-2 position-absolute top-0 end-0"> 
-    <p>Tip:</p> 
-    <p>Tipo de usuario: 1 (admin) </p>
-    <p>Tipo de usuario: 2 (reporter) </p>
-    <p>Tipo de usuario: 0 (normal) </p>
-    </div>
-<div class="container container2">
+<div class="container container2 text-start">
     <h1>Actualizar Usuario</h1>
-    
+    <div class="container text-end ">
     <a href="#" routerLink="/admini/admin" class="btn btn-dark">Regresar</a>
-           
+</div> 
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
-   
         <div class="form-group">
-            <label for="nombre">Nombre:</label>
-            <input
-                formControlName="nombre"
-                id="nombre"
+            <label for="CardUID">Card ID:</label>
+            <input 
+                formControlName="CardUID"
+                id="CardUID"
                 type="text"
-                [(ngModel)]="usuario.nombre"
+                class="form-control"
+                [readonly]="true"
+            >
+        </div>
+        <div class="form-group">
+            <label for="Nombre">Nombre:</label>
+            <input
+                formControlName="Nombre"
+                id="Nombre"
+                type="text"
                 class="form-control">
-            <div *ngIf="f['nombre'].touched && f['nombre'].invalid" class="alert alert-danger">
-                <div *ngIf="f['nombre'].errors && f['nombre'].errors['required']">El nombre es obligatorio.</div>
+            <div *ngIf="f['Nombre'].touched && f['Nombre'].invalid" class="alert alert-danger">
+                <div *ngIf="f['Nombre'].errors && f['Nombre'].errors['required']">El Nombre es obligatorio.</div>
             </div>
         </div>
    
     
         <div class="form-group">
-            <label for="email">Email:</label>
+            <label for="Apellido">Apellido:</label>
             <input
-                formControlName="email"
-                id="email"
-                type="email"
-                [(ngModel)]="usuario.email"
+                formControlName="Apellido"
+                id="Apellido"
+                type="text"
                 class="form-control">
-            <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
-                <div *ngIf="f['email'].errors && f['email'].errors['required']">El Email es obligatorio.</div>
+            <div *ngIf="f['Apellido'].touched && f['Apellido'].invalid" class="alert alert-danger">
+                <div *ngIf="f['Apellido'].errors && f['Apellido'].errors['required']">El Apellido es obligatorio.</div>
             </div>
         </div>
-   
-
-   
         <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Guardar</button>
     </form>
 </div>

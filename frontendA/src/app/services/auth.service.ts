@@ -20,10 +20,9 @@ export class AuthService {
   // Create Usuario
   AddUsuario(usuario: Usuario) {
     this.UsuariosRef.push({
-      $key:usuario.$key,
-      nombre: usuario.nombre,
-      email: usuario.email,
-      password: usuario.password,
+      Nombre: usuario.Nombre,
+      Apellido: usuario.Apellido,
+      CardUID: usuario.CardUID,
     });
   }
   // Fetch Single Usuario Object
@@ -39,10 +38,9 @@ export class AuthService {
   // Update Usuario Object
   UpdateUsuario(usuario: Usuario) {
     this.UsuarioRef.update({
-      $key:usuario.$key,
-      nombre: usuario.nombre,
-      email: usuario.email,
-      password: usuario.password,
+      Nombre: usuario.Nombre,
+      Apellido: usuario.Apellido,
+      CardUID: usuario.CardUID,
     });
   }
   // Delete Usuario Object
