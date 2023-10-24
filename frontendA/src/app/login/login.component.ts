@@ -4,7 +4,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthUser } from '../models/auth.model';
 import { AuthService } from '../services/auth.service';
 import { MarcajeService } from '../services/marcaje.service';
-import { TipoUserService } from '../services/tipo-user.service';
 import { TokenStorageService } from '../services/token-storage.service';
 
 @Component({
@@ -25,7 +24,6 @@ export class LoginComponent implements OnInit {
     private authService: AuthService, 
     private storageService: TokenStorageService,
     private router: Router,
-    private servicioTipoUser: TipoUserService,
   ) { } 
   ngOnInit(): void {
 
