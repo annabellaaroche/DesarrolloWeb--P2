@@ -11,17 +11,17 @@
             <p class="lead fw-normal mb-0 me-3">Sign in</p>
           </div>
 
-          <!-- Email input -->
+          <!-- userName input -->
           <div class="form-group form-outline mb-4">
-            <label class="form-label" for="form3Example3">Correo</label>
+            <label class="form-label" for="form3Example3">Nombre de Usuario</label>
 
             <input
-            formControlName="email"
-            id="email"
-            type="email"
-            class="form-control form-control-lg" placeholder="Ingresar Correo">
-        <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger" >
-            <div *ngIf="f['email'].errors && f['email'].errors['required']">El correo es obligatorio.</div>
+            formControlName="userName"
+            id="userName"
+            type="text"
+            class="form-control form-control-lg" placeholder="Ingresar Nombre de Usuario">
+        <div *ngIf="f['userName'].touched && f['userName'].invalid" class="alert alert-danger" >
+            <div *ngIf="f['userName'].errors && f['userName'].errors['required']">El correo es obligatorio.</div>
         </div>
           </div>
 
@@ -42,10 +42,9 @@
           <div class="text-center text-lg-start mt-4 pt-2">
             <button type="submit" class="btn btn-primary btn-lg"
               style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-            <p class="small fw-bold mt-2 pt-1 mb-0">No tienes Cuenta? <a routerLink="/register"
-                class="link-danger">Registrarse</a></p>
+           <!-- <p class="small fw-bold mt-2 pt-1 mb-0">No tienes Cuenta? <a routerLink="/register"
+                class="link-danger">Registrarse</a></p>-->
           </div>
-
         </form>
       </div>
     </div>
