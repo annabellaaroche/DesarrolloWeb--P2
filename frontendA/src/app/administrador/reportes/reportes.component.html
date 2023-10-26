@@ -1,52 +1,59 @@
 <app-navbar></app-navbar>
+
 <div *ngIf="ctr>0" class="container">
-  <h2>Asistencia</h2>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Status</th>
-        <th scope="col">Time</th>
-        <th scope="col">UID</th>
-        <th scope="col">Opciones</th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let asistencia of Asistencia">
-        <td>{{asistencia.id}}</td>
-        <td>{{asistencia.status}}</td>
-        <td>{{asistencia.time}}</td>
-        <td>{{asistencia.uid}}</td>
-        <td>
-          <button type="button" class="btn btn-secondary" routerLink="/admini/editar/{{asistencia.id}}">Editar</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<div class="container">
-  <h2>Asistencia</h2>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Status</th>
-        <th scope="col">Time</th>
-        <th scope="col">UID</th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let asistencia of Asistencia">
-        <td>{{asistencia.id}}</td>
-        <td>{{asistencia.status}}</td>
-        <td>{{asistencia.time}}</td>
-        <td>{{asistencia.uid}}</td>
-      </tr>
-    </tbody>
-  </table>
+    <h2>Asistencia</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Status</th>
+                <th scope="col">Time</th>
+                <th scope="col">UID</th>
+                <th scope="col">Opciones</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let asistencia of Asistencia">
+                <td>{{asistencia.id}}</td>
+                <td>
+                    <span *ngIf="asistencia.status === 1">Check In</span>
+                    <span *ngIf="asistencia.status === 0">Check Out</span>
+                </td>
+                <td>{{asistencia.time}}</td>
+                <td>{{asistencia.uid}}</td>
+                <td>
+                    <button type="button" class="btn btn-secondary" routerLink="/admini/editar/{{asistencia.id}}">Editar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
+<div class="container">
+    <h2>Asistencia</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Status</th>
+                <th scope="col">Time</th>
+                <th scope="col">UID</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let asistencia of Asistencia">
+                <td>{{asistencia.id}}</td>
+                <td>
+                    <span *ngIf="asistencia.status === 1">Check In</span>
+                    <span *ngIf="asistencia.status === 0">Check Out</span>
+                </td>
+                <td>{{asistencia.time}}</td>
+                <td>{{asistencia.uid}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
