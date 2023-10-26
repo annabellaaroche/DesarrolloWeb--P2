@@ -7,6 +7,7 @@
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Status</th>
+                <th scope="col">Date</th> <!-- Nueva columna -->
                 <th scope="col">Time</th>
                 <th scope="col">UID</th>
                 <th scope="col">Opciones</th>
@@ -21,6 +22,7 @@
                     <span *ngIf="asistencia.status === 1">Check In</span>
                     <span *ngIf="asistencia.status === 0">Check Out</span>
                 </td>
+                <td>{{asistencia.date}}</td> <!-- Nueva columna -->
                 <td>{{asistencia.time}}</td>
                 <td>{{asistencia.uid}}</td>
                 <td>
@@ -38,6 +40,7 @@
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Status</th>
+                <th scope="col">Date</th> <!-- Nueva columna -->
                 <th scope="col">Time</th>
                 <th scope="col">UID</th>
                 <th></th>
@@ -51,6 +54,7 @@
                     <span *ngIf="asistencia.status === 1">Check In</span>
                     <span *ngIf="asistencia.status === 0">Check Out</span>
                 </td>
+                <td>{{asistencia.date}}</td> <!-- Nueva columna -->
                 <td>{{asistencia.time}}</td>
                 <td>{{asistencia.uid}}</td>
             </tr>
