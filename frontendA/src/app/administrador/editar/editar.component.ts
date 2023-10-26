@@ -42,6 +42,7 @@ export class EditarComponent implements OnInit {
       nombre: ['', [Validators.required, Validators.minLength(2)]],
       apellido: ['',[Validators.required,Validators.minLength(2)]],
       cardUID: ['', [Validators.required]],
+      userStatus:[''],
     });
    // this.form.controls['CardUID'].disable();
   }
@@ -53,7 +54,8 @@ get f(){
     if (!this.form.valid) {
       return;
     }
-    console.log(this.form.value);
+    this.form.patchValue({userStatus:'1'});
+    console.log("VALOR",this.form.value);
     this.crudApi.UpdateUsuario(this.form.value);
     console.log("Usuario Editado Con exito")
     this.router.navigateByUrl('admini/admin');

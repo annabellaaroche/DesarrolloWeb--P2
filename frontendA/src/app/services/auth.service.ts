@@ -23,6 +23,7 @@ export class AuthService {
       nombre: usuario.nombre,
       apellido: usuario.apellido,
       cardUID: usuario.cardUID,
+      userStatus:usuario.userStatus,
     });
   }
   // Fetch Single Usuario Object
@@ -41,6 +42,7 @@ export class AuthService {
       nombre: usuario.nombre,
       apellido: usuario.apellido,
       cardUID: usuario.cardUID,
+      userStatus:usuario.userStatus,
     });
   }
   // Delete Usuario Object
