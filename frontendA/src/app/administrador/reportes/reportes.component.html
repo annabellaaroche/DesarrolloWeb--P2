@@ -1,37 +1,28 @@
 <app-navbar></app-navbar>
-<body>
-
-    <div class="container card text-center">
-      <div class="card-header">
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Selecione el Reporte que desea generar</h5>
-        <select class="form-select form-select-lg mb-3" aria-label=".form-select" [(ngModel)]="opcionSeleccionado" (change)="capturar()">
-          <option value="1">Marcaje de Empleados</option>
-            <option value="2">Marcajes Fuera de Horario</option>
-          </select>
-
-          <div class="card-body" *ngIf="(opcionSeleccionado=='1')">
-            <select class="form-select form-select-lg mb-3" aria-label=".form-select" >
-                <option value="1">Departamento</option>
-                <option value="2">General</option>
-                <option value="2">Individual</option>
-              </select>   
-              <button  type="button" class="btn btn-dark">Generar</button>
-      
-            </div>
-
-          <div class="card-body" *ngIf="(opcionSeleccionado=='2')">
-            <select class="form-select form-select-lg mb-3" aria-label=".form-select" >
-                <option value="1">Fuera del Horario</option>
-                <option value="2">Antes del horario de salida</option>
-              </select>      
-              <button  type="button" class="btn btn-dark">Generar</button>
-        
-            </div>
-      </div>
-      <div class="card-footer text-muted">
-        Generar Reporte
-      </div>
-    </div>
-</body>
+<div *ngIf="ctr>0" class="container">
+  <h2>Asistencia</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Status</th>
+        <th scope="col">Time</th>
+        <th scope="col">UID</th>
+        <th scope="col">Opciones</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let asistencia of Asistencia">
+        <td>{{asistencia.id}}</td>
+        <td>{{asistencia.status}}</td>
+        <td>{{asistencia.time}}</td>
+        <td>{{asistencia.uid}}</td>
+        <td>
+          <button type="button" class="btn btn-secondary" routerLink="/admini/editar/{{asistencia.id}}">Editar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
