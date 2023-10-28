@@ -6,6 +6,8 @@
         <thead>
             <tr>
                 <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
                 <th scope="col">Status</th>
                 <th scope="col">Date</th> <!-- Nueva columna -->
                 <th scope="col">Time</th>
@@ -18,6 +20,8 @@
         <tbody>
             <tr *ngFor="let asistencia of Asistencia">
                 <td>{{asistencia.id}}</td>
+                <td>{{asistencia.nombre}}</td>
+                <td>{{asistencia.apellido}}</td>
                 <td>
                     <span *ngIf="asistencia.status === 1">Check In</span>
                     <span *ngIf="asistencia.status === 0">Check Out</span>
@@ -39,6 +43,8 @@
         <thead>
             <tr>
                 <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
                 <th scope="col">Status</th>
                 <th scope="col">Date</th> <!-- Nueva columna -->
                 <th scope="col">Time</th>
@@ -50,6 +56,8 @@
         <tbody>
             <tr *ngFor="let asistencia of Asistencia">
                 <td>{{asistencia.id}}</td>
+                <td>{{asistencia.nombre}}</td>
+                <td>{{asistencia.apellido}}</td>
                 <td>
                     <span *ngIf="asistencia.status === 1">Check In</span>
                     <span *ngIf="asistencia.status === 0">Check Out</span>
